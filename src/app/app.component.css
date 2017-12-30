@@ -1,0 +1,41 @@
+.itemName {
+  color: #000000;
+  font-weight: bold;
+  display: inline-flex;
+  vertical-align: top;
+}
+
+.itemDetails {
+  font-size: smaller;
+  display: inline-flex;
+  vertical-align: top;
+}
+
+.sublistContainer {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+h3 a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.listWithBullets {
+  list-style: none;
+}
+
+.listWithBullets li {
+  padding-left: 1em;
+  text-indent: -.7em;
+}
+
+.listWithBullets li:before {
+  content: "• ";
+  color: #94bf1e;
+  font-size: 20px;
+}

@@ -1,0 +1,94 @@
+<div class="container">
+    <div style="line-height: 1.5;">
+        <a href="https://www.w3.org/TR/media-source/">Media Source Extensions (MSE)</a> is a Javascript API that
+        let's you build video players that support streaming protocols beyond progressive media download of MP4/WebM files. It is
+        one of the core pieces of modern HTML5 video players which support HTTP chunk based streaming protocols like MPEG DASH (
+        <a href="https://github.com/Dash-Industry-Forum/dash.js">dash.js</a>) or HLS (<a href="https://github.com/video-dev/hls.js">hls.js</a>),
+        that allows you to implement advanced streaming features like:
+        <ul class="listWithBullets">
+            <li>Adaptive Streaming. Streaming quality automatically adapted attending to evolution of different metrics (ex: network conditions, frame drops, etc)</li>
+            <li>Live Streaming with time shift (DVR)</li>
+            <li>Ad insertion feature in which ad chunks are inserted between content chunks</li>
+        </ul>
+
+        <p>
+            Together with MSE, <a href="https://www.w3.org/TR/encrypted-media/">Encrypted Media Extensions (EME)</a>
+            is a Javascript API that allows you to use DRM capabilities of your browser. With both APIs
+            you can build HTML5 video players which support streaming protocols and features that before MSE/EME were only possible
+            with the help of browser plugins like Flash or Silverlight.
+        </p>
+        <p>
+            Below you will find details about the mime types (containers, codecs) and DRM sytems supported by the MSE/EME implementation of your browser.
+        </p>
+
+    </div>
+</div>
+<div class="container">
+    <mat-card>
+        <mat-card-title>
+                Media Source Extension Support
+                <mat-icon [ngStyle]="{'color': mseSupported ? colorYes : colorNo }">{{mseSupported ? 'thumb_up' : 'thumb_down'}}</mat-icon>
+        </mat-card-title>
+        <mat-card-content>
+            <div>
+                <h3>
+
+                </h3>
+                <div *ngIf="mseSupported"> Great, your browser supports <a href="https://www.w3.org/TR/media-source/">Media Source Extensions</a>!</div>
+                <div *ngIf="!mseSupported"> Oh, sorry, unfortunately your browser doesn't support <a href="https://www.w3.org/TR/media-source/">Media Source Extensions</a></div>
+            </div>
+
+            <div class="sublistContainer">
+                <div>
+                    <h4>Mime Types supported</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li *ngFor="let mimeType of mimeTypes">
+                            <mat-icon [ngStyle]="{'color': mimeType.supported ? colorYes : colorNo }">{{mimeType.supported ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+                            <span class="itemName">{{ mimeType.desc }}</span>
+                            <span class="itemDetails">({{mimeType.mimeType}})</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="container">
+    <mat-card>
+        <mat-card-title>
+                Encrypted Media Extensions
+                <mat-icon [ngStyle]="{'color': emeSupported ? colorYes : colorNo }">{{emeSupported ? 'thumb_up' : 'thumb_down'}}</mat-icon>
+        </mat-card-title>
+
+        <mat-card-content>
+            <div>
+                <div *ngIf="emeSupported"> Great, your browser supports <a href="https://www.w3.org/TR/encrypted-media/">Encrypted Media Extensions</a> which could enable compatibility with DRM systems!</div>
+                <div *ngIf="!emeSupported"> Oh, sorry, unfortunately your browser doesn't support <a href="https://www.w3.org/TR/encrypted-media/">Encrypted Media Extensions</a></div>
+            </div>
+
+            <div class="sublistContainer">
+                <div>
+                    <h4>KeySystems supported</h4>
+                    <div>
+                        <ul>
+                            <li *ngFor="let drm of drmMechanisms">
+                                <mat-icon [ngStyle]="{'color': drm.supported ? colorYes : colorNo }">{{drm.supported ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+                                <span class="itemName">{{ drm.id }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="container">
+    <h4>Would you like to check compatibility in browsers/versions different than yours? Take a look here:</h4>
+    <ul>
+        <li><a href="https://caniuse.com/#feat=mediasource">Media Source Extensions browsers compatibility</a></li>
+        <li><a href="https://caniuse.com/#feat=eme">Encrypted Media Extensions Extensions browsers compatibility</a></li>
+</ul>
+</div>
