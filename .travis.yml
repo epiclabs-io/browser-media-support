@@ -16,7 +16,7 @@ before_script:
   - npm install -g angular-cli-ghpages
 
 script:
-  - ng build --prod --base-href /
+  - ng build --prod --base-href "https://epiclabs-io.github.io/browser-media-support/"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" = "master" ]; then
