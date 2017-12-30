@@ -5,6 +5,7 @@ body {
     margin: 0;
     color: #303030;
     background: #ffffff;
+    min-width: 405px;
     font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 }
 
@@ -19,9 +20,16 @@ body {
 }
 
 .navbar .title {
-    font-size: x-large;
+    display: inline-block;
+    font-size: 2vh;
     color: #ffffff;
     vertical-align: top;
+}
+
+@media(max-width: 400px) {
+    .navbar .title {
+        font-size: 1.8vh;
+    }
 }
 
 .container {
@@ -38,6 +46,7 @@ body {
     margin-bottom: 0px;
     padding-bottom: 50px;
     padding: 5px;
+    display: grid;
 }
 
 .footer-epic {
