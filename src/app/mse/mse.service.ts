@@ -20,7 +20,9 @@ export class MseService {
 
   mimeTypes: MimeTypeInfo[] = [
     // MP4 types
-    { 'desc': 'MP4 - H.264 AVC1', 'mimeType': 'video/mp4; codecs="avc1.42E01E"' },
+    { 'desc': 'MP4 - H.264 AVC1 Baseline profile', 'mimeType': 'video/mp4; codecs="avc1.42E01E"' },
+    { 'desc': 'MP4 - H.264 AVC1 Main profile', 'mimeType': 'video/mp4; codecs="avc1.4D401F"' },
+    { 'desc': 'MP4 - H.264 AVC1 High profile', 'mimeType': 'video/mp4; codecs="avc1.64000a"' },
     { 'desc': 'MP4 - H.264 AVC3', 'mimeType': 'video/mp4; codecs="avc3.42E01E"' },
     { 'desc': 'MP4 - HEVC HEV1', 'mimeType': 'video/mp4; codecs="hev1.1.6.L93.90"' },
     { 'desc': 'MP4 - HEVC HVC1', 'mimeType': 'video/mp4; codecs="hvc1.1.6.L93.90"' },
